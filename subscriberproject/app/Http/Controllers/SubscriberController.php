@@ -4,17 +4,37 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Subscriber;
+use Illuminate\Support\Facades\Validator;
 
 class SubscriberController extends Controller
 {
     public function subscribe(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email|unique:subscribers,email'
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:subscribers,email',
         ]);
 
-        Subscriber::create(['email' => $request->email]);
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Validation error',
+                'errors' => $validator->errors()
+            ], 422);
+        }
 
-        return response()->json(['message' => 'Inscription réussie !'], 201);
+        try {
+            $subscriber = Subscriber::create([
+                'email' => $request->email
+            ]);
+
+            return response()->json([
+                'message' => 'Subscription successful',
+                'subscriber' => $subscriber
+            ], 201);
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => 'Server error',
+                'error' => $e->getMessage()
+            ], 500);
+        }
     }
 }
