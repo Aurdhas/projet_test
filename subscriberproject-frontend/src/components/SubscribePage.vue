@@ -9,13 +9,13 @@
                 <div>
                     <ul class="mt-4 space-y-2">
                   <li class="flex items-center text-gray-700">
-                    <img src="/home/aurdhas/projet_test/subscriberproject-frontend/src/assets/images/icon-list.svg" alt="Check" class="w-4 h-4 mr-2"> Product discovery and building what matters
+                    <img src="../assets/images/icon-list.svg" alt="Check" class="w-4 h-4 mr-2"> Product discovery and building what matters
                   </li>
                   <li class="flex items-center text-gray-700">
-                    <img src="/home/aurdhas/projet_test/subscriberproject-frontend/src/assets/images/icon-list.svg" alt="Check" class="w-4 h-4 mr-2"> Measuring to ensure updates are a success
+                    <img src="../assets/images/icon-list.svg" alt="Check" class="w-4 h-4 mr-2"> Measuring to ensure updates are a success
                   </li>
                   <li class="flex items-center text-gray-700">
-                    <img src="/home/aurdhas/projet_test/subscriberproject-frontend/src/assets/images/icon-list.svg" alt="Check" class="w-4 h-4 mr-2"> And much more!
+                    <img src="../assets/images/icon-list.svg" alt="Check" class="w-4 h-4 mr-2"> And much more!
                   </li>
                 </ul>
                 </div>
@@ -41,11 +41,11 @@
                 </button>
             </div>
             <div class="hidden md:block md:w-1/2 bg-cover bg-center relative">
-                <img src="/home/aurdhas/projet_test/subscriberproject-frontend/src/assets/images/illustration-sign-up-desktop.svg" alt="Illustration" class="w-full h-full object-cover">
+                <img src="../assets/images/illustration-sign-up-desktop.svg" alt="Illustration" class="w-full h-full object-cover">
             </div>
         </div>
         <div v-if="subscribed" class="bg-white rounded-lg shadow-lg p-10 text-center max-w-sm">
-            <img src="/home/aurdhas/projet_test/subscriberproject-frontend/src/assets/images/icon-success.svg" class="w-12 mx-auto mb-4" />
+            <img src="../assets/images/icon-success.svg" class="w-12 mx-auto mb-4" />
             <h2 class="text-2xl font-bold text-gray-900">Thanks for subscribing!</h2>
             <p class="text-gray-600 mt-2">
                 A confirmation email has been sent to <strong>{{ email }}</strong>. 
